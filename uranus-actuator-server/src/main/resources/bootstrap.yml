@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: actuator-server
+  cloud:
+    config:
+      uri: http://localhost:8100
+      name: ${spring.application.name}

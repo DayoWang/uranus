@@ -18,6 +18,7 @@
     <module>uranus-api-gateway-server</module>
     <module>uranus-user-server</module>
     <module>uranus-common</module>
+    <module>uranus-actuator-server</module>
   </modules>
 
   <parent>
@@ -31,6 +32,7 @@
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <java.version>1.8</java.version>
     <spring-cloud.version>Finchley.SR2</spring-cloud.version>
+    <spring-boot-admin.version>2.0.4</spring-boot-admin.version>
   </properties>
 
   <dependencyManagement>
@@ -46,6 +48,27 @@
   </dependencyManagement>
 
   <dependencies>
+    <!-- Spring Boot -->
+    <!--<dependency>-->
+      <!--<groupId>org.springframework.boot</groupId>-->
+      <!--<artifactId>spring-boot-starter</artifactId>-->
+    <!--</dependency>-->
+    <!--<dependency>-->
+      <!--<groupId>org.springframework.boot</groupId>-->
+      <!--<artifactId>spring-boot-starter-web</artifactId>-->
+    <!--</dependency>-->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-actuator</artifactId>
+    </dependency>
+
+    <!-- Spring Boot Admin -->
+    <dependency>
+      <groupId>de.codecentric</groupId>
+      <artifactId>spring-boot-admin-starter-client</artifactId>
+      <version>${spring-boot-admin.version}</version>
+    </dependency>
+    <!-- Spring Cloud-->
     <dependency>
       <groupId>org.springframework.cloud</groupId>
       <artifactId>spring-cloud-starter-config</artifactId>
