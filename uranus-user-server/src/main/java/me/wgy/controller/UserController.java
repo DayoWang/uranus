@@ -20,12 +20,31 @@ public class UserController {
   @Autowired
   UserService userService;
 
-  @LoggerManage(description = "controller hello方法")
-  @RequestMapping(value = "/hello", method = RequestMethod.GET)
-  public String hello(@RequestParam(value = "userName") String userName) {
+  @LoggerManage(description = "创建用户")
+  @RequestMapping(value = "/create", method = RequestMethod.POST)
+  public boolean createUser(@RequestParam(value = "name") String name,
+      @RequestParam(value = "identity") String identity) {
     User user = new User();
-    user.setName(userName);
-    return userService.hello(user);
+    user.setName(name);
+    user.setIdentity(identity);
+    try {
+      userService.create(user);
+      return Boolean.TRUE;
+    } catch (Exception e) {
+      return Boolean.FALSE;
+    }
+  }
+
+  @LoggerManage(description = "根据姓名查询用户")
+  @RequestMapping(value = "/query/name", method = RequestMethod.GET)
+  public User queryByName(@RequestParam(value = "name") String name) {
+    return userService.queryByName(name);
+  }
+
+  @LoggerManage(description = "根据姓名查询用户")
+  @RequestMapping(value = "/query/identity", method = RequestMethod.GET)
+  public User queryByIdentity(@RequestParam(value = "identity") String identity) {
+    return userService.queryByIdentity(identity);
   }
 
 }

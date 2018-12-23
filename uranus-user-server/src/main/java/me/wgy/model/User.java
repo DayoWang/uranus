@@ -1,14 +1,22 @@
 package me.wgy.model;
 
+import java.io.Serializable;
 import lombok.Data;
 
 /**
- * @author wgy
- * @date 2018/11/21
+ * user
+ *
+ * @author
  */
 @Data
-public class User {
+public class User implements Serializable {
 
-  String name;
+  private static final long serialVersionUID = 1L;
+
+  private Integer id;
+
+  private String name;
+
+  private String identity;
 
 }

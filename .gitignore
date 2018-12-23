@@ -48,3 +48,6 @@ nb-configuration.xml
 
 # Misc
 *.swp
+
+#rebel
+rebel.xml
