@@ -44,10 +44,11 @@ public class AESEncryptUtil {
       //生成一个128位的随机源,根据传入的字节数组
       SecureRandom random = SecureRandom.getInstance("SHA1PRNG");
       random.setSeed(encodeRules.getBytes());
-      keygen.init(128, random);            //3.产生原始对称密钥
-      SecretKey original_key = keygen.generateKey();
+      keygen.init(128, random);
+      //3.产生原始对称密钥
+      SecretKey originalKey = keygen.generateKey();
       //4.获得原始对称密钥的字节数组
-      byte[] raw = original_key.getEncoded();
+      byte[] raw = originalKey.getEncoded();
       //5.根据字节数组生成AES密钥
       SecretKey key = new SecretKeySpec(raw, "AES");
       //6.根据指定算法AES自成密码器
@@ -63,7 +64,7 @@ public class AESEncryptUtil {
       //11.将字符串返回
       return encryptStr;
     } catch (Exception e) {
-      log.error("AES encrypt Excepiton", e);
+      log.error("AES encrypt Exception", e);
       return null;
     }
   }
@@ -81,9 +82,9 @@ public class AESEncryptUtil {
       random.setSeed(encodeRules.getBytes());
       keygen.init(128, random);
       //3.产生原始对称密钥
-      SecretKey original_key = keygen.generateKey();
+      SecretKey originalKey = keygen.generateKey();
       //4.获得原始对称密钥的字节数组
-      byte[] raw = original_key.getEncoded();
+      byte[] raw = originalKey.getEncoded();
       //5.根据字节数组生成AES密钥
       SecretKey key = new SecretKeySpec(raw, "AES");
       //6.根据指定算法AES自成密码器
@@ -99,7 +100,7 @@ public class AESEncryptUtil {
       String decryptStr = new String(decryptByte, "utf-8");
       return decryptStr;
     } catch (Exception e) {
-      log.error("AES decrypt Excepiton", e);
+      log.error("AES decrypt Exception", e);
       return "";
     }
   }

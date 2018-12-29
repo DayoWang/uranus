@@ -2,7 +2,9 @@ spring:
   application:
     name: discovery-server
   cloud:
-    config:
-      uri: http://localhost:8100
-      name: ${spring.application.name}
-      label: dev
+    nacos:
+      config:
+        server-addr: "118.25.14.62:8848"
+        group: uranus
+        file-extension: yaml
+
