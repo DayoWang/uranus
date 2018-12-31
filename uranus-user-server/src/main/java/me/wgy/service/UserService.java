@@ -16,9 +16,6 @@ import org.springframework.stereotype.Service;
 @RefreshScope
 public class UserService {
 
-  @Value("${hello.msg}")
-  String msg;
-
   @Autowired
   UserMapper userMapper;
 
