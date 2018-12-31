@@ -2,6 +2,10 @@ spring:
   application:
     name: user-server
   cloud:
-    config:
-      uri: http://localhost:8100
-      name: ${spring.application.name}
+    nacos:
+      config:
+        server-addr: "118.25.14.62:8848"
+        group: uranus
+        file-extension: yaml
+logging:
+  config: classpath:logback.xml
