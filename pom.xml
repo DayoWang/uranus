@@ -35,6 +35,7 @@
     <lombok.version>1.18.4</lombok.version>
     <nacos.version>0.2.1.RELEASE</nacos.version>
     <sentinel.version>0.2.1.RELEASE</sentinel.version>
+    <docker.image.prefix>uranus</docker.image.prefix>
   </properties>
 
   <dependencyManagement>
