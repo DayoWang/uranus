@@ -5,6 +5,7 @@ import com.alibaba.csp.sentinel.slots.block.BlockException;
 import me.wgy.log.LoggerManage;
 import me.wgy.model.User;
 import me.wgy.service.UserService;
+import me.wgy.view.Pagination;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
@@ -52,6 +53,14 @@ public class UserController {
   @RequestMapping(value = "/query/identity", method = RequestMethod.GET)
   public User queryByIdentity(@RequestParam(value = "identity") String identity) {
     return userService.queryByIdentity(identity);
+  }
+
+  @LoggerManage(description = "分页获取所有用户")
+  @RequestMapping(value = "/query/users", method = RequestMethod.GET)
+  public Pagination<User> queryAll(
+      @RequestParam(value = "pageNum", required = false) Integer pageNum,
+      @RequestParam(value = "pageSize", required = false) Integer pageSize) {
+    return userService.queryAllByPage(pageNum, pageSize);
   }
 
   @LoggerManage(description = "获取消息配置")
