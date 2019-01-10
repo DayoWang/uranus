@@ -72,17 +72,23 @@
     where id = #{id,jdbcType=INTEGER}
   </update>
   <select id="selectByName" parameterType="java.lang.String" resultMap="BaseResultMap">
-    SELECT
+    select
     <include refid="Base_Column_List"/>
-    FROM user
-    WHERE `name` = #{name,jdbcType=VARCHAR}
+    from user
+    where `name` = #{name,jdbcType=VARCHAR}
   </select>
 
   <select id="selectByIdentity" parameterType="java.lang.String" resultMap="BaseResultMap">
-    SELECT
+    select
     <include refid="Base_Column_List"/>
-    FROM user
-    WHERE `identity` = #{identity,jdbcType=VARCHAR,javaType=AESEncrypt}
+    from user
+    where `identity` = #{identity,jdbcType=VARCHAR,javaType=AESEncrypt}
+  </select>
+
+  <select id="selectAll" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List"/>
+    from user
   </select>
 
 </mapper>
