@@ -21,7 +21,9 @@ public class AESEncryptUtil {
     //单例
   }
 
-  //双重锁
+  /**
+   * 双重锁
+   */
   public static AESEncryptUtil getInstance() {
     if (AESEncryptUtil == null) {
       synchronized (AESEncryptUtil.class) {
@@ -111,10 +113,10 @@ public class AESEncryptUtil {
     // 密码的明文
     String clearPwd = "My world is full of wonders! No body can match my spirit";
     // 密码加密后的密文
-    String encryptStr = AESEncryptUtil.getInstance().encrypt(strKey, clearPwd);
+    String encryptStr = getInstance().encrypt(strKey, clearPwd);
     System.out.println(encryptStr);
     // 解密后的字符串
-    String decryptedPwd = AESEncryptUtil.getInstance().decrypt(strKey, encryptStr);
+    String decryptedPwd = getInstance().decrypt(strKey, encryptStr);
     System.out.println(decryptedPwd);
 
   }
