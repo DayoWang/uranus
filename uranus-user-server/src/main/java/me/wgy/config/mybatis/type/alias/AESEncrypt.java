@@ -1,4 +1,4 @@
-package me.wgy.config.mybatis.typeAlias;
+package me.wgy.config.mybatis.type.alias;
 
 import org.apache.ibatis.type.Alias;
 

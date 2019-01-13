@@ -1,11 +1,11 @@
-package me.wgy.config.mybatis.typeHandler;
+package me.wgy.config.mybatis.type.handler;
 
 import java.sql.CallableStatement;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import lombok.extern.slf4j.Slf4j;
-import me.wgy.config.mybatis.typeAlias.AESEncrypt;
+import me.wgy.config.mybatis.type.alias.AESEncrypt;
 import me.wgy.util.AESEncryptUtil;
 import org.apache.ibatis.type.BaseTypeHandler;
 import org.apache.ibatis.type.JdbcType;

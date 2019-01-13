@@ -70,12 +70,16 @@ public class UserController {
     return message;
   }
 
-  // Fallback 函数，函数签名与原函数一致.
+  /**
+   * Fallback 函数，函数签名与原函数一致.
+   */
   public String messageFallback() {
     return String.format("Message Fallback");
   }
 
-  // Block 异常处理函数，参数最后多一个 BlockException，其余与原函数一致.
+  /**
+   * Block 异常处理函数，参数最后多一个 BlockException，其余与原函数一致.
+   */
   public String exceptionHandler(BlockException ex) {
     // Do some log here.
     ex.printStackTrace();
