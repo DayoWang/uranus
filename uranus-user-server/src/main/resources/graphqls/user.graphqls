@@ -1,0 +1,13 @@
+type User{
+    id:ID!
+    name: String!
+    identity: String!}
+
+
+type Query {
+    findAllUsers: [User]!
+}
+
+type Mutation {
+    newUser(name: String!, identity: String!) : User!
+}
