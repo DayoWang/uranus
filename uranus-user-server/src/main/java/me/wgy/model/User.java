@@ -1,5 +1,6 @@
 package me.wgy.model;
 
+import io.swagger.annotations.ApiModel;
 import java.io.Serializable;
 import lombok.Data;
 
@@ -9,6 +10,7 @@ import lombok.Data;
  * @author
  */
 @Data
+@ApiModel
 public class User implements Serializable {
 
   private static final long serialVersionUID = 1L;

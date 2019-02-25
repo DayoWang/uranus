@@ -6,6 +6,9 @@ import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
 
+/**
+ * @author wangguangyuan
+ */
 @Mapper
 public interface UserMapper {
 
