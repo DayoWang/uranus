@@ -1,4 +1,4 @@
-package me.wgy.config.mybatis.type;
+package me.wgy.config;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.PropertyAccessor;
