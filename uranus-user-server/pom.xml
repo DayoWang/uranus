@@ -89,6 +89,12 @@
       <artifactId>springfox-swagger-ui</artifactId>
       <version>2.9.2</version>
     </dependency>
+    <!-- druid -->
+    <dependency>
+      <groupId>com.alibaba</groupId>
+      <artifactId>druid-spring-boot-starter</artifactId>
+      <version>1.1.10</version>
+    </dependency>
   </dependencies>
 
   <build>
@@ -114,7 +120,16 @@
           </resources>
         </configuration>
       </plugin>
-      <!-- Docker maven plugin -->
+      <!--&lt;!&ndash; archetype &ndash;&gt;
+      <plugin>&lt;!&ndash;配置资源打包方式 &ndash;&gt;
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-resources-plugin</artifactId>
+        <version>2.2</version>
+        &lt;!&ndash;最关键的地方 &ndash;&gt;
+        <configuration>
+          <includeEmptyDirs>true</includeEmptyDirs>
+        </configuration>
+      </plugin>-->
     </plugins>
   </build>
 </project>
