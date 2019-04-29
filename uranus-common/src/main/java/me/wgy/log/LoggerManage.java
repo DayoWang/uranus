@@ -17,5 +17,8 @@ import java.lang.annotation.Target;
 @Documented
 public @interface LoggerManage {
 
-  String description();
+  /**
+   * 日志描述信息
+   */
+  String description() default "";
 }
