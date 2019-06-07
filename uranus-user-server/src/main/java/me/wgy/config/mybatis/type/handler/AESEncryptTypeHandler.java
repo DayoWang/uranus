@@ -6,7 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import lombok.extern.slf4j.Slf4j;
 import me.wgy.config.mybatis.type.alias.AESEncrypt;
-import me.wgy.util.AESEncryptUtil;
+import me.wgy.util.AesEncryptUtil;
 import org.apache.ibatis.type.BaseTypeHandler;
 import org.apache.ibatis.type.JdbcType;
 import org.apache.ibatis.type.MappedTypes;
@@ -35,7 +35,7 @@ public class AESEncryptTypeHandler extends BaseTypeHandler<String> {
       throws SQLException {
     // 只要 parameter 非空都进行加密
     log.info("setNonNullParameter index <{}>, param <{}> ", i, parameter);
-    ps.setString(i, AESEncryptUtil.getInstance().encrypt(AES_KEY, parameter));
+    ps.setString(i, AesEncryptUtil.getInstance().encrypt(AES_KEY, parameter));
   }
 
   /**
@@ -48,7 +48,7 @@ public class AESEncryptTypeHandler extends BaseTypeHandler<String> {
   @Override
   public String getNullableResult(ResultSet rs, String columnName) throws SQLException {
     String r = rs.getString(columnName);
-    return r == null ? null : AESEncryptUtil.getInstance().decrypt(AES_KEY, r);
+    return r == null ? null : AesEncryptUtil.getInstance().decrypt(AES_KEY, r);
   }
 
   /**
@@ -61,7 +61,7 @@ public class AESEncryptTypeHandler extends BaseTypeHandler<String> {
   @Override
   public String getNullableResult(ResultSet rs, int columnIndex) throws SQLException {
     String r = rs.getString(columnIndex);
-    return r == null ? null : AESEncryptUtil.getInstance().decrypt(AES_KEY, r);
+    return r == null ? null : AesEncryptUtil.getInstance().decrypt(AES_KEY, r);
   }
 
   /**
@@ -74,6 +74,6 @@ public class AESEncryptTypeHandler extends BaseTypeHandler<String> {
   public String getNullableResult(CallableStatement cs, int columnIndex) throws SQLException {
     String r = cs.getString(columnIndex);
     // 兼容待修复的数据
-    return r == null ? null : AESEncryptUtil.getInstance().decrypt(AES_KEY, r);
+    return r == null ? null : AesEncryptUtil.getInstance().decrypt(AES_KEY, r);
   }
 }
