@@ -16,6 +16,8 @@ import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
 /**
+ * 日志打印切面
+ *
  * @author wgy
  * @date 2019-04-29
  */
@@ -72,7 +74,7 @@ public class LoggerAspect {
    * 在切点之后织入
    */
   @After("webLog()")
-  public void doAfter() throws Throwable {
+  public void doAfter() {
     // 接口结束后换行，方便分割查看
     log.info(
         "=========================================== End ==========================================="
