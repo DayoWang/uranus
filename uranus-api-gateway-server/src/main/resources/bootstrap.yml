@@ -4,6 +4,5 @@ spring:
   cloud:
     nacos:
       config:
-        server-addr: "47.101.144.251:8848"
         group: uranus
         file-extension: yaml
