@@ -1,5 +1,5 @@
-#!/usr/bin/env bash
-FROM java:8
+#!/bin/bash
+FROM openjdk:8
 VOLUME /tmp
 ADD uranus-discovery-server-1.0-SNAPSHOT.jar app.jar
 ENV JAVA_OPTS=""
