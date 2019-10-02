@@ -6,4 +6,4 @@
 ![avatar](https://spring.io/img/homepage/diagram-distributed-systems.svg)
 
 ## 系统架构
-![avatar](https://www.processon.com/view/link/5d4e60d0e4b04399f59f7889)
+![avatar](http://tva1.sinaimg.cn/large/007X8olVly1g7k5y0unojj30u015ktbr.jpg)
