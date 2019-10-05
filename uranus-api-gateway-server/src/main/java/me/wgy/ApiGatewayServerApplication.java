@@ -2,10 +2,7 @@ package me.wgy;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.gateway.filter.ratelimit.KeyResolver;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
-import org.springframework.context.annotation.Bean;
-import reactor.core.publisher.Mono;
 
 /**
  * @author wgy
@@ -19,11 +16,4 @@ public class ApiGatewayServerApplication {
     SpringApplication.run(ApiGatewayServerApplication.class, args);
   }
 
-  /**
-   * ip限流
-   */
-  @Bean
-  public KeyResolver ipKeyResolver() {
-    return exchange -> Mono.just(exchange.getRequest().getRemoteAddress().getHostName());
-  }
 }
