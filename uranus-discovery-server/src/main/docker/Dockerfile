@@ -4,4 +4,4 @@ FROM java:8
 VOLUME /tmp
 ADD uranus-discovery-server-1.0-SNAPSHOT.jar /opt/app.jar
 ENV JAVA_OPTS=""
-ENTRYPOINT exec java $JAVA_OPTS /opt/app.jar
+ENTRYPOINT exec java $JAVA_OPTS -jar /opt/app.jar

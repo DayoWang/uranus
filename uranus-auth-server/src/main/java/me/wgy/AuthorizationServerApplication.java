@@ -6,14 +6,12 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
 /**
  * @author wgy
- * @date 2018/11/10
+ * @date 2019/10/2
  */
 @EnableEurekaClient
 @SpringBootApplication
-public class ApiGatewayServerApplication {
-
+public class AuthorizationServerApplication {
   public static void main(String[] args) {
-    SpringApplication.run(ApiGatewayServerApplication.class, args);
+    SpringApplication.run(AuthorizationServerApplication.class, args);
   }
-
 }
