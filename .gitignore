@@ -51,3 +51,15 @@ nb-configuration.xml
 
 #rebel
 rebel.xml
+/uranus-common/src/main/agent/logs/
+uranus-actuator-server/src/test/
+uranus-api-gateway-server/src/main/java/me/wgy/filter/
+uranus-api-gateway-server/src/main/java/me/wgy/model/
+uranus-api-gateway-server/src/main/java/me/wgy/route/
+uranus-api-gateway-server/src/test/
+uranus-auth-server/src/main/docker/
+uranus-auth-server/src/test/
+uranus-common/src/main/java/me/wgy/annotation/
+uranus-common/src/main/resources/
+uranus-common/src/test/
+uranus-discovery-server/src/test/
